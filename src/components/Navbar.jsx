@@ -4,6 +4,8 @@ import {BiSearch} from 'react-icons/bi'
 import {AiOutlineClose} from 'react-icons/ai'
 import {HiOutlineMenuAlt4} from 'react-icons/hi'
 import {FaFacebook, FaTwitter, FaInstagram, FaPinterest, FaYoutube} from 'react-icons/fa'
+import { BrowserRouter } from 'react-router-dom';
+import {HashLink as Link} from "react-router-hash-link";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -17,13 +19,15 @@ const Navbar = () => {
         <div>
             <h1 onClick={handleNav} className={logo ? 'hidden' : 'block'}>TRAVELS.</h1>
         </div>
+        <BrowserRouter>
         <ul className='hidden md:flex'>
-          <li>Home</li>
-          <li>Destinations</li>
-          <li>Travel</li>
-          <li>View</li>
-          <li>Book</li>
+          <Link to=''smooth > <li>Home</li> </Link>
+          <Link to='#destinations'smooth > <li>Destinations</li> </Link>
+          <Link to='#travel' smooth > <li>Travel</li> </Link>
+          <Link to='#view'smooth > <li>View</li> </Link>
+          <Link to='#book'smooth > <li>Book</li> </Link>
         </ul>
+        </BrowserRouter>
         <div className='hidden md:flex'>
           <BiSearch className='mr-2' size={20}/>
           <BsPerson size={20}/>
@@ -38,11 +42,13 @@ const Navbar = () => {
         <div onClick={handleNav} className={nav ? 'absolute text-black left-0 top-0 w-full bg-gray-100/90 px-4 py-7 flex flex-col': 'absolute left-[-100%]'}>
           <ul>
           <h1>TRAVELS.</h1>
-          <li className='border-b'>Home</li>
-          <li className='border-b'>Destinations</li>
-          <li className='border-b'>Travel</li>
-          <li className='border-b'>View</li>
-          <li className='border-b'>Book</li>
+          <BrowserRouter>
+          <Link to=''smooth > <li>Home</li> </Link>
+          <Link to='#destinations'smooth > <li>Destinations</li> </Link>
+          <Link to='#travel' smooth > <li>Travel</li> </Link>
+          <Link to='#view'smooth > <li>View</li> </Link>
+          <Link to='#book'smooth > <li>Book</li> </Link>
+          </BrowserRouter>
 
           <div className="flex flex-col">
             <button className="my-6">Search</button>
